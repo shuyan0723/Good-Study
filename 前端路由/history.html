@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <ul>
+        <li><a href="#/home">首页</a></li>
+        <li><a href="#/list">列表</a></li>
+    </ul>
+    <!-- 当url 变更后，展示对应的代码片段 -->
+    <div id="root"></div>
+    <script>
+          const routes=[
+            {
+                path:'/home',
+                components:(val)=>{
+                    return `<h1>首页${val}</h1>`
+                }
+            },
+            {
+                path:'/list',
+                components:()=>{
+                    return `<h1>列表</h1>`
+                }
+            }
+        ]
+
+         let routerView=document.getElementById('root')
+
+         window.addEventListener('DOMContentLoaded',()=>{
+           onLoad()
+         })
+         window.addEventListener('popstate',()=>{ // 监听浏览器前进后退事件
+            renderView(location.pathname)
+         })
+
+         function onLoad(){ // 渲染对应组件
+           let linkList=document.querySelectorAll('a[href]')
+
+        //    console.log(linkList);
+        linkList.forEach(el=>{
+            el.addEventListener('click',(e)=>{
+                console.log(this);
+                
+                e.preventDefault() // 阻止a 标签的默认跳转行为
+                history.pushState(null,'',el.getAttribute('href'))//进入浏览器的缓存栈，但不受前进后退影响
+                console.log(el.href);
+                
+            })
+        })
+           
+         }
+
+         function renderView(url){
+            const index=routes.findIndex(item=>{
+                return item.path===url
+            })
+            routerView.innerHTML=routes[index].components()
+         }
+    </script>
+</body>
+</html>
