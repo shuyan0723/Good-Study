@@ -10,11 +10,17 @@ const Demo:FC=()=>{
     }
 
     function alertFn(){
-        
+        setTimeout(()=>{
+            alert(count)
+        },3000)
     }
     return
         <>
-            闭包陷阱
+            
+            <div>
+                <button onClick={add}>+</button>
+                <button onClick={alertFn}>alert</button>
+            </div>
         </>
     
 }
