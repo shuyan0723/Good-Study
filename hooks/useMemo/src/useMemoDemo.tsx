@@ -3,9 +3,9 @@
  // 可用于计算量比较大的场景，用于缓存性能
 
  
-import React, {FC, useMemo,useState } from 'react'
+import  {useMemo,useState } from 'react'
 
-const Demo:FC=()=>{
+const Demo=()=>{
   console.log('demo........');//每次更新导致函数重新更新
   
    const [num1,setNum1]=useState(10)
