@@ -1,7 +1,3 @@
-
-console.log(require('@/assets/logo.png'));
-
-
 import './index.scss'
 import {Card,Form,Input,Button} from 'antd'
 import logo from '@/assets/logo.png'
