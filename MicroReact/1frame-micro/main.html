@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        iframe{
+            display: none;
+        }
+        /* iframe[src="./form.html"]{
+            display: block;
+        } */
+    </style>
+</head>
+<body>
+    <header>
+        主应用
+    </header>
+    <button id="click-form">form</button>
+    <button id="click-portal">portal</button>
+    <iframe id="form" src="./form.html"></iframe>
+    <iframe id="portal" src="./portal.html"></iframe>
+    <script>
+     const formFrame=document.getElementById("form");
+     const portalFrame=document.getElementById("portal");
+ 
+     const clickForm=document.getElementById("click-form");
+     const clickPortal=document.getElementById("click-portal")
+  
+     // 绑定事件
+     clickForm.onclick= function(){
+        formFrame.style.display="block";
+        portalFrame.style.display="none";
+     }
+
+     clickPortal.onclick=function(){
+        formFrame.style.display="none";
+        portalFrame.style.display="block";
+     }
+     // 优点
+  </script>
+</body>
+</html>
