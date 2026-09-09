@@ -1,3 +1,5 @@
+import './ResultPanel.css';
+
 // 🔧 Bug 判断提示组件：根据请求结果自动给出排查思路
 function BugJudgeHint({ result }) {
   if (!result) return null;
@@ -26,9 +28,9 @@ function BugJudgeHint({ result }) {
   }
 
   return (
-    <div style={{ marginTop: 16, padding: 12, background: '#e8f5e9', borderRadius: 6, fontSize: 13, lineHeight: 1.8 }}>
+    <div className="bug-judge-hint">
       <b>🎓 排查思路：</b>
-      <ul style={{ marginLeft: 20, marginTop: 6 }}>
+      <ul>
         {hints.map((h, i) => <li key={i}>{h}</li>)}
         <li>🔑 <b>黄金法则</b>：打开 F12 → Network 面板 → 点按钮 → 看请求状态：
           <br />• <b>请求没发出去（Failed / (canceled)）</b> → 前端问题 或 后端没启动
@@ -61,14 +63,14 @@ export default function ResultPanel({ result }) {
       </div>
 
       {result.errorMsg && (
-        <div style={{ marginTop: 12, padding: 10, background: '#fff3cd', borderLeft: '3px solid #ffc107', borderRadius: 4, fontSize: 13 }}>
+        <div className="error-msg-box">
           ⚠️ {result.errorMsg}
         </div>
       )}
 
       {result.data !== null && (
         <div>
-          <div style={{ fontSize: 12, color: '#888', marginTop: 12 }}>响应体：</div>
+          <div className="response-label">响应体：</div>
           <pre className="result-box">{JSON.stringify(result.data, null, 2)}</pre>
         </div>
       )}

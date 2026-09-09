@@ -1,0 +1,21 @@
+.product-list-top {
+  margin-top: 12px;
+}
+
+.product-desc {
+  color: #888;
+}
+
+.product-divider {
+  margin: 16px 0;
+  border: none;
+  border-top: 1px solid #eee;
+}
+
+.product-form {
+  margin-bottom: 8px;
+}
+
+.product-input-desc {
+  width: 200px;
+}

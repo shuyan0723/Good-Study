@@ -1,3 +1,5 @@
+import './ProductSection.css';
+
 export default function ProductSection({
   products,
   loadProducts,
@@ -17,22 +19,22 @@ export default function ProductSection({
       </div>
 
       {products.length > 0 && (
-        <div style={{ marginTop: 12 }} className="product-list">
+        <div className="product-list product-list-top">
           {products.map(p => (
             <div key={p.id} className="product-item">
-              <span>🆕 {p.name} <small style={{ color: '#888' }}>{p.description}</small></span>
+              <span>🆕 {p.name} <small className="product-desc">{p.description}</small></span>
               <span className="price">¥{p.price}</span>
             </div>
           ))}
         </div>
       )}
 
-      <hr style={{ margin: '16px 0', border: 'none', borderTop: '1px solid #eee' }} />
+      <hr className="product-divider" />
 
-      <div style={{ marginBottom: 8 }}>
+      <div className="product-form">
         <input placeholder="商品名" value={productName} onChange={e => setProductName(e.target.value)} />
         <input placeholder="价格" type="number" value={productPrice} onChange={e => setProductPrice(e.target.value)} />
-        <input placeholder="描述（可选）" value={productDesc} onChange={e => setProductDesc(e.target.value)} style={{ width: 200 }} />
+        <input className="product-input-desc" placeholder="描述（可选）" value={productDesc} onChange={e => setProductDesc(e.target.value)} />
       </div>
       <button className="btn btn-primary" onClick={createProduct}>
         创建商品 POST /products

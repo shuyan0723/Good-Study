@@ -1,0 +1,28 @@
+.bug-judge-hint {
+  margin-top: 16px;
+  padding: 12px;
+  background: #e8f5e9;
+  border-radius: 6px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.bug-judge-hint ul {
+  margin-left: 20px;
+  margin-top: 6px;
+}
+
+.error-msg-box {
+  margin-top: 12px;
+  padding: 10px;
+  background: #fff3cd;
+  border-left: 3px solid #ffc107;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.response-label {
+  font-size: 12px;
+  color: #888;
+  margin-top: 12px;
+}

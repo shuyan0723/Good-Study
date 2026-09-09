@@ -19,7 +19,7 @@ export function createRequest(baseUrl) {
       const res = await fetch(url, {
         ...options,
         signal: controller.signal,
-        headers: { 'Content-Type': 'application/json', ...options.headers },
+        headers: { "Content-Type": "application/json", ...options.headers },
       });
       clearTimeout(timeoutId);
       duration = Date.now() - start;
@@ -27,21 +27,28 @@ export function createRequest(baseUrl) {
 
       const text = await res.text();
       let data;
-      try { data = JSON.parse(text); } catch { data = text; }
+      try {
+        data = JSON.parse(text);
+      } catch {
+        data = text;
+      }
 
       return { ok: res.ok, status, duration, data, raw: text };
     } catch (err) {
       clearTimeout(timeoutId);
       duration = Date.now() - start;
 
-      let errorType = 'UNKNOWN';
+      let errorType = "UNKNOWN";
       let errorMsg = err.message;
 
-      if (err.name === 'AbortError') {
-        errorType = 'TIMEOUT';
+      if (err.name === "AbortError") {
+        errorType = "TIMEOUT";
         errorMsg = `请求超时（超过 5 秒）—— 可能是后端慢或网络问题`;
-      } else if (err.message?.includes('Failed to fetch') || err.name === 'TypeError') {
-        errorType = 'NETWORK';
+      } else if (
+        err.message?.includes("Failed to fetch") ||
+        err.name === "TypeError"
+      ) {
+        errorType = "NETWORK";
         errorMsg = `网络请求失败 —— 可能是：①后端未启动 ②CORS 跨域被拦截 ③地址写错`;
       }
 
