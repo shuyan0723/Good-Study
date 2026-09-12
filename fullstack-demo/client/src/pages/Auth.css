@@ -1,0 +1,159 @@
+/* Auth 页面专属样式 */
+.auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.auth-header h1 {
+  font-size: 24px;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+}
+.auth-header p {
+  color: #888;
+  font-size: 14px;
+}
+
+/* Tab 切换 */
+.auth-tabs {
+  display: flex;
+  background: #f1f3f9;
+  border-radius: 8px;
+  padding: 4px;
+  margin-bottom: 24px;
+}
+.auth-tab {
+  flex: 1;
+  padding: 10px 0;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+  transition: all 0.2s;
+}
+.auth-tab.active {
+  background: #fff;
+  color: #4361ee;
+  box-shadow: 0 2px 8px rgba(67, 97, 238, 0.2);
+  font-weight: 600;
+}
+
+/* 表单 */
+.auth-form .form-group {
+  margin-bottom: 16px;
+}
+.auth-form label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 6px;
+}
+.auth-form input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #e1e4ea;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  margin: 0;
+  background: #fafbfd;
+}
+.auth-form input:focus {
+  outline: none;
+  border-color: #4361ee;
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+  background: #fff;
+}
+
+/* 消息提示 */
+.alert {
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+.alert-error {
+  background: #fff0f3;
+  border: 1px solid #ffc9d6;
+  color: #c9184a;
+}
+.alert-success {
+  background: #e8f7ee;
+  border: 1px solid #b8e3c8;
+  color: #2f855a;
+}
+
+/* 提交按钮 */
+.auth-submit {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #4361ee, #3a56d4);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 8px;
+}
+.auth-submit:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(67, 97, 238, 0.4);
+}
+.auth-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* 底部切换 */
+.auth-footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  color: #888;
+}
+.link-btn {
+  background: none;
+  border: none;
+  color: #4361ee;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 0 4px;
+  text-decoration: underline;
+}
+.link-btn:hover {
+  color: #3a56d4;
+}
+
+/* 底部提示 */
+.auth-tip {
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 13px;
+  text-align: center;
+  max-width: 500px;
+}
